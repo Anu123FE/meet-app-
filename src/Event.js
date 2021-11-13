@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { mock2, mockData } from "./mock-data";
 
 class Event extends Component {
   state = {
@@ -23,21 +24,17 @@ class Event extends Component {
       <ul>
         {
           // Change array to your mockdata
-          [
-            {
-              description: "event 1",
-              location: "berlin"
-            },
-            {
-              description: "event 2",
-              location: "london"
-            }
-          ].map((i,e) =>
-            <li key={i} hidden={this.state.show} onClick={this.showEvent}>
+          mockData.map((e) =>
+            <li key={e.id} hidden={this.state.show} onClick={this.showEvent}>
               <p>
+                <b>description: </b><br />
                 {e.description}
+                </p>
+                <p>
+                <b>location: </b><br />
                 {e.location}
               </p>
+              <hr />
             </li>
             )
         }
