@@ -1,45 +1,41 @@
-import React, { Component } from "react";
+
 import { mock2, mockData } from "./mock-data";
+import React, {useState} from 'react'
 
-class Event extends Component {
-  state = {
-    show: false
+export default function Event() {
+  const [show, setShow] = useState(true)
+  const showEvent = () => {
+    if(show === true)  { setShow(false) }
+    else { setShow(true) }
   }
-
-  showEvent(){
-    if (this.state.show === true ){
-      this.setState({
-        show: false
-      })
-    }
-    else {
-      this.setState({
-        show: true
-      })
-    }
-    
-  }
-  render() {
-    return <div>
+  return (
+    <div>
       <ul>
         {
           // Change array to your mockdata
           mockData.map((e) =>
-            <li key={e.id} hidden={this.state.show} onClick={this.showEvent}>
+            <li key={e.id} >
               <p>
-                <b>description: </b><br />
-                {e.description}
-                </p>
-                <p>
                 <b>location: </b><br />
                 {e.location}
               </p>
+              <a href="#" onClick={showEvent}>Show more</a>
+              <div hidden={show}> 
+                <b>description: </b><br />
+                {e.description}
+                </div>
+                
               <hr />
             </li>
             )
         }
       </ul>
-    </div>;
-  }
+
+    </div>
+  )
 }
-export default Event;
+
+
+
+
+

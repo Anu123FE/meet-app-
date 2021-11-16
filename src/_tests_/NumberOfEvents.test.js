@@ -12,8 +12,10 @@ describe('<App /> component', () => {
       expect(NumberofEventsWrapper.find("div")).toHaveLength(1);
     });
 
-    test('trigger onChange', () => {
-        expect(NumberofEventsWrapper.find("input")).toHaveLength(1);
-       //simulate event onChange
-      });
+      test('changes the state of Number Of Events correctly', () =>{
+          const newValue = { target: { value: 10}};
+          NumberofEventsWrapper.find('input').simulate('change', newValue);
+          expect(NumberofEventsWrapper.find("input")).toHaveLength(1);
+          expect(NumberofEventsWrapper.state('numberofevents')).toBe(10);
+      })
   });
