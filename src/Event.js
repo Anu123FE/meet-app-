@@ -2,15 +2,23 @@
 import { mock2, mockData } from "./mock-data";
 import React, {useState} from 'react'
 
-export default function Event() {
+export default function Event(props) {
   const [show, setShow] = useState(true)
+  const [buttonTxt, setbuttonTxt] = useState("Show more")
   const showEvent = () => {
-    if(show === true)  { setShow(false) }
-    else { setShow(true) }
+    if(show === true)  { 
+      setShow(false) 
+    setbuttonTxt("Hide")
   }
+    else { 
+      setShow(true)
+      setbuttonTxt("Show more")
+    }
+  }
+  const {e} = props;
   return (
     <div>
-      <ul>
+      {/* <ul>
         {
           // Change array to your mockdata
           mockData.map((e) =>
@@ -29,8 +37,17 @@ export default function Event() {
             </li>
             )
         }
-      </ul>
+      </ul> */}
 
+              <p>
+                <b>location: </b><br />
+                {e.location}
+              </p>
+              <a href="#" onClick={showEvent}>{buttonTxt}</a>
+              <div hidden={show}> 
+                <b>description: </b><br />
+                {e.description}
+              </div>
     </div>
   )
 }
