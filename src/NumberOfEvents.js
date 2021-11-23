@@ -8,11 +8,14 @@ class NumberOfEvents extends React.Component {
         this.setState({
             numberofevents: evt.target.value
         })
-        this.props.updateNumberOfEvents(this.state.numberofevents);
+    }
+    updateNumOfEvt = (e) => {
+        if (e.key === 'Enter') 
+        this.props.updateNumberOfEvents(this.state.numberofevents)
     }
     render() { 
         return <div>
-            NumberofEvents <input value ={this.state.numberofevents} type="text" onChange={this.handleInput}/>
+            NumberofEvents <input value ={this.state.numberofevents} type="text" onChange={this.handleInput} onKeyDown={this.updateNumOfEvt}/>
         </div>;
     }
 

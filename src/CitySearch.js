@@ -8,14 +8,10 @@ class CitySearch extends Component {
         query: '',
         suggestions: [],
         events: [],
-        numberOfEvent: 10
       }
       updateNumberOfEvents = (num) => {
         this.setState({
-          numberOfEvent: num
-        })
-        this.setState({
-          events: mockData.filter( data  => data.location == this.state.query).slice(0, this.state.numberOfEvent)
+          events: mockData.filter( data  => data.location == this.state.query).slice(0, num)
         })
       }
       handleInputChanged = (event) => {
