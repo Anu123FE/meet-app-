@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
 import EventList from './EventList';
 import { mockData } from './mock-data';
+import NumberOfEvents from './NumberOfEvents';
 
 class CitySearch extends Component {
     state = {
         query: '',
         suggestions: [],
-        events: []
+        events: [],
+        numberOfEvent: 10
+      }
+      updateNumberOfEvents = (num) => {
+        this.setState({
+          numberOfEvent: num
+        })
+        this.setState({
+          events: mockData.filter( data  => data.location == this.state.query).slice(0, this.state.numberOfEvent)
+        })
       }
       handleInputChanged = (event) => {
         const value = event.target.value;
@@ -31,12 +41,12 @@ class CitySearch extends Component {
   render() {
     return (
       <div className="CitySearch">
-          <input
+          Search for a city: <input
              type="text"
              className='city'
              onChange={this.handleInputChanged}
              value={this.state.query}
-             />
+             /> 
             <ul className="suggestions">
                {this.state.suggestions.map((suggestion) => (
                  <li
@@ -48,7 +58,8 @@ class CitySearch extends Component {
               <b>See all cities</b>
             </li>
            </ul>
-
+           <br/><br/>
+              <NumberOfEvents  updateNumberOfEvents = {this.updateNumberOfEvents} />
            <hr width="100%"></hr>
            <br/>
            <EventList events={this.state.events} />

@@ -8,6 +8,7 @@ class NumberOfEvents extends React.Component {
         this.setState({
             numberofevents: evt.target.value
         })
+        this.props.updateNumberOfEvents(this.state.numberofevents);
     }
     render() { 
         return <div>
