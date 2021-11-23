@@ -16,29 +16,9 @@ export default function Event(props) {
     }
   }
   const {e} = props;
+  console.log(e)
   return (
     <div>
-      {/* <ul>
-        {
-          // Change array to your mockdata
-          mockData.map((e) =>
-            <li key={e.id} >
-              <p>
-                <b>location: </b><br />
-                {e.location}
-              </p>
-              <a href="#" onClick={showEvent}>Show more</a>
-              <div hidden={show}> 
-                <b>description: </b><br />
-                {e.description}
-                </div>
-                
-              <hr />
-            </li>
-            )
-        }
-      </ul> */}
-
               <p>
                 <b>location: </b><br />
                 {e.location}
