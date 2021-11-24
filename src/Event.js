@@ -16,7 +16,7 @@ export default function Event(props) {
     }
   }
   const {e} = props;
-  console.log(e)
+  //console.log(e)
   return (
     <div>
               <p>

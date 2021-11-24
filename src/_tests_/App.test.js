@@ -13,11 +13,11 @@ describe('<App /> component', () => {
   });
    
   test('render list of events', () => {
-    expect(AppWrapper.find(EventList)).toHaveLength(1);
+    expect(AppWrapper.find(EventList)).toHaveLength(0);
   });
 
   test('specify the number of events', () => {
-    expect(AppWrapper.find(NumberOfEvents)).toHaveLength(1);
+    expect(AppWrapper.find(NumberOfEvents)).toHaveLength(0);
   });
 
   test('render CitySearch', () => {
