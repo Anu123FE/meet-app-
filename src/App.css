@@ -11,8 +11,9 @@
 
 .Title {
     text-align: center;
-    text-shadow: blue;
-    font-size: large;
+    text-shadow: 1px 1px 10px;
+    font-size: 200%;
+    color: blueviolet;
 }
 
 p { font-size: 120%; color: dimgray; };
