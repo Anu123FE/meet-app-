@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import CitySearch from '../CitySearch';
 import { mockData } from '../mock-data';
 import { extractLocations } from '../api';
+import { NumberOfEvents } from '../NumberOfEvents';
 
 describe('<CitySearch /> component', () => {
     let locations, CitySearchWrapper;
@@ -65,6 +66,6 @@ describe('<CitySearch /> component', () => {
     expect(CitySearchWrapper.state("query")).toBe(suggestions[0]);
   });
 
-  
+
 
 });

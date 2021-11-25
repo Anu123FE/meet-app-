@@ -1,37 +1,51 @@
 
 import { mock2, mockData } from "./mock-data";
-import React, {useState} from 'react'
+import React, {Component} from 'react'
 
-export default function Event(props) {
-  const [show, setShow] = useState(true)
-  const [buttonTxt, setbuttonTxt] = useState("Show more")
-  const showEvent = () => {
-    if(show === true)  { 
-      setShow(false) 
-    setbuttonTxt("Hide")
+class Event extends Component {
+  state = {
+    show: true,
+    buttonTxt: "Show more"
+  };
+
+  showEvent = () => {
+    if(this.state.show === true)  { 
+      this.setState({
+        show: false,
+        buttonTxt: "Hide"
+      });
   }
     else { 
-      setShow(true)
-      setbuttonTxt("Show more")
+      this.setState({
+        show: true,
+        buttonTxt: "Show more"
+      });
     }
   }
-  const {e} = props;
-  //console.log(e)
-  return (
+  
+  
+  render() {
+  const {e} = this.props;
+  const {buttonTxt, show} = this.state;
+  console.log(e)
+
+    
+    return (
     <div>
               <p>
                 <b>location: </b><br />
                 {e.location}
               </p>
-              <a href="#" onClick={showEvent}>{buttonTxt}</a>
+              <a href="#" onClick={this.showEvent}>{buttonTxt}</a>
               <div hidden={show}> 
                 <b>description: </b><br />
                 {e.description}
               </div>
     </div>
   )
+  }
 }
-
+export default Event;
 
 
 

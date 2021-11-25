@@ -11,8 +11,10 @@ describe('<EventList /> component', () => {
   //   expect(EventWrapper.find('li')).toHaveLength(2);
   // });
 
-  test('hidden is set to fault by default', () => {
-    const EventWrapper = shallow(<Event events={mockData}/>);
-    expect(EventWrapper.state('show')).toBe(false);
+  test('show is set to true by default', () => {
+    const EventWrapper = shallow(<Event e ={mockData[0]}/>);
+    expect(EventWrapper.setState(state('show')).toBe(true));
   });
+
+  
 });
