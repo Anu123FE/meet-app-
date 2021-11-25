@@ -67,5 +67,9 @@ describe('<CitySearch /> component', () => {
   });
 
 
+  test("test updateNumberOfEvents", () => {
+    // new CitySearch().updateNumberOfEvents(2);
+    // expect(CitySearchWrapper.state('events')).toBe([])
+  });
 
 });

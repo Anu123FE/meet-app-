@@ -1,5 +1,5 @@
 import NumberOfEvents from "../NumberOfEvents";
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 
 describe('<App /> component', () => {
@@ -18,4 +18,12 @@ describe('<App /> component', () => {
           expect(NumberofEventsWrapper.find("input")).toHaveLength(1);
           expect(NumberofEventsWrapper.state('numberofevents')).toBe(10);
       })
+
+      test('...', () => {
+        const NumberofEventsWrapper = mount(<NumberOfEvents />);
+        NumberofEventsWrapper.setState({numberofevents: 2})
+        new NumberOfEvents().updateNumOfEvt({key: "enter"});
+        expect(NumberofEventsWrapper.state('numberofevents')).toBe(2);
+    
+      });
   });
