@@ -5,16 +5,18 @@ import { mockData } from '../mock-data';
 
 
 describe('<EventList /> component', () => {
-  // test('render correct number of events', () => {
-  //   const EventWrapper = shallow(<Event />);
-  //   expect(EventWrapper.find('ul')).toHaveLength(1);
-  //   expect(EventWrapper.find('li')).toHaveLength(2);
-  // });
-
   test('show is set to true by default', () => {
     const EventWrapper = shallow(<Event e ={mockData[0]}/>);
-    expect(EventWrapper.setState(state('show')).toBe(true));
+    expect(EventWrapper.state('show')).toBe(true);
+
   });
 
+  test('state should change on button Click', () => {
+    const EventWrapper = shallow(<Event e ={mockData[0]}/>);
+    EventWrapper.find("a").simulate("click");
+    expect(EventWrapper.state('buttonTxt')).toBe("Hide");
+    EventWrapper.find("a").simulate("click");
+    expect(EventWrapper.state('buttonTxt')).toBe("Show more");
+  });
   
 });

@@ -27,7 +27,7 @@ class Event extends Component {
   render() {
   const {e} = this.props;
   const {buttonTxt, show} = this.state;
-  console.log(e)
+
 
     
     return (
