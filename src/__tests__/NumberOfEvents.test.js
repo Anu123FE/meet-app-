@@ -20,10 +20,10 @@ describe('<App /> component', () => {
       })
 
       test('...', () => {
-        const NumberofEventsWrapper = mount(<NumberOfEvents />);
-        NumberofEventsWrapper.setState({numberofevents: 2})
-        new NumberOfEvents().updateNumOfEvt({key: "Enter"});
-        // expect(NumberofEventsWrapper.state('numberofevents')).toBe(2);
-    
+
+        const upFunc = (num) => num;
+        const NumberofEventsWrapper = mount(<NumberOfEvents updateNumberOfEvents={upFunc}/>);
+        NumberofEventsWrapper.instance().updateNumOfEvt({key: "Enter"});
+        expect(NumberofEventsWrapper.state('numberofevents')).toBe(10)
       });
   });
