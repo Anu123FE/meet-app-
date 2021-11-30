@@ -9,11 +9,13 @@ class CitySearch extends Component {
         suggestions: [],
         events: [],
       }
+
       updateNumberOfEvents = (num) => {
         this.setState({
           events: mockData.filter( data  => data.location == this.state.query).slice(0, num)
         })
       }
+    
       handleInputChanged = (event) => {
         const value = event.target.value;
         const suggestions = this.props.locations.filter((location) => {

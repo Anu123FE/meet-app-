@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class NumberOfEvents extends React.Component {
-    state={
+    state = { 
         numberofevents: 10
     }
     handleInput = (evt) => {
@@ -10,8 +11,9 @@ class NumberOfEvents extends React.Component {
         })
     }
     updateNumOfEvt = (e) => {
-        if (e.key === 'Enter') 
+        if (e.key === 'Enter') {
         this.props.updateNumberOfEvents(this.state.numberofevents)
+        }
     }
     render() { 
         return <div>
@@ -20,5 +22,10 @@ class NumberOfEvents extends React.Component {
     }
 
 }
+
+NumberOfEvents.propTypes = {
+    updateNumberOfEvents: PropTypes.func
+  };
  
 export default NumberOfEvents;
+
