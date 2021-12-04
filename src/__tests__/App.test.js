@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import App from '../App';
 import EventList from '../EventList';
 import CitySearch from '../CitySearch';
@@ -22,5 +22,15 @@ describe('<App /> component', () => {
 
   test('render CitySearch', () => {
     expect(AppWrapper.find(CitySearch)).toHaveLength(1);
+  });
+});
+
+describe('<App /> integration', () => {
+  test('App passes "events" state as a prop to EventList', () => {
+    const AppWrapper = mount(<App />);
+    const AppLocationState = AppWrapper.state('locations');
+    expect(AppLocationState).not.toEqual(undefined);
+    expect(AppWrapper.find(CitySearch).props().locations).toEqual(AppLocationState);
+    AppWrapper.unmount();
   });
 });

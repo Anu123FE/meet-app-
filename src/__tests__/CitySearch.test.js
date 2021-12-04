@@ -66,9 +66,8 @@ describe('<CitySearch /> component', () => {
     expect(CitySearchWrapper.state("query")).toBe(suggestions[0]);
   });
 
-
   test("test updateNumberOfEvents", () => {
-    new CitySearch().updateNumberOfEvents(6);
+     CitySearchWrapper.instance().updateNumberOfEvents(6);
     expect(CitySearchWrapper.state('events').length).toBe(6)
   });
 
