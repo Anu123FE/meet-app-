@@ -1,9 +1,10 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow ,  mount} from 'enzyme';
 import CitySearch from '../CitySearch';
 import { mockData } from '../mock-data';
 import { extractLocations } from '../api';
 import { NumberOfEvents } from '../NumberOfEvents';
+import EventList from '../EventList';
 
 describe('<CitySearch /> component', () => {
     let locations, CitySearchWrapper;
@@ -69,6 +70,19 @@ describe('<CitySearch /> component', () => {
   test("test updateNumberOfEvents", () => {
      CitySearchWrapper.instance().updateNumberOfEvents(6);
     expect(CitySearchWrapper.state('events').length).toBe(6)
+  });
+  
+
+});
+
+describe('<CitySearch /> integration', () => {
+  test('App passes "events" state as a prop to EventList', () => {
+    const CitySearchWrapper = mount(<CitySearch />);
+    const CitySearchWrapperQueryState = CitySearchWrapper.state('query');
+    expect(CitySearchWrapperQueryState).not.toEqual(undefined);
+    expect(CitySearchWrapper.find(EventList).props().events).not.toEqual(undefined);
+    // expect(CitySearchWrapper.find(EventList).props().events).toEqual();
+    // CitySearchWrapper.unmount();
   });
 
 });
