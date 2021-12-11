@@ -10,6 +10,12 @@ class CitySearch extends Component {
         events: [],
       }
 
+      componentDidMount() {
+        this.setState({
+          events: mockData
+        })
+      }
+
       updateNumberOfEvents = (num) => {
         this.setState({
           events: mockData.filter( data  => data.location == this.state.query).slice(0, num)

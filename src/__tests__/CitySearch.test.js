@@ -85,4 +85,26 @@ describe('<CitySearch /> integration', () => {
     // CitySearchWrapper.unmount();
   });
 
+  test('', () => {
+    const EventListWrapper = mount(<EventList events={[{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }]}  />);
+    expect(EventListWrapper.find(EventList).props().events).not.toEqual(undefined);
+  });
+
+  test('App passes "suggestions" state as a prop to EventList', () => {
+    const CitySearchWrapper = mount(<CitySearch />);
+    const CitySearchWrapperQueryState = CitySearchWrapper.state('suggestions');
+    CitySearchWrapper.setState({'query': 'Berlin'});
+    expect(CitySearchWrapperQueryState).not.toEqual(undefined);
+    expect(CitySearchWrapper.find(EventList).props().events).not.toEqual(undefined);
+    CitySearchWrapper.unmount();
+  });
+
+  test('App loads a list of events by default on launch', () => {
+    const CitySearchWrapper = mount(<CitySearch />);
+    const CitySearchWrapperQueryState = CitySearchWrapper.state('events');
+    expect(CitySearchWrapperQueryState).not.toEqual(undefined);
+    expect(CitySearchWrapper.find(EventList).props().events).not.toEqual(undefined);
+    CitySearchWrapper.unmount();
+  });
+
 });
