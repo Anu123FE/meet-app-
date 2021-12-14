@@ -3,7 +3,6 @@ import { shallow ,  mount} from 'enzyme';
 import CitySearch from '../CitySearch';
 import { mockData } from '../mock-data';
 import { extractLocations } from '../api';
-import { NumberOfEvents } from '../NumberOfEvents';
 import EventList from '../EventList';
 
 describe('<CitySearch /> component', () => {
@@ -67,7 +66,7 @@ describe('<CitySearch /> component', () => {
     expect(CitySearchWrapper.state("query")).toBe(suggestions[0]);
   });
 
-  test("test updateNumberOfEvents", () => {
+  test("updateNumberOfEvents", () => {
      CitySearchWrapper.instance().updateNumberOfEvents(6);
     expect(CitySearchWrapper.state('events').length).toBe(6)
   });
@@ -85,7 +84,7 @@ describe('<CitySearch /> integration', () => {
     // CitySearchWrapper.unmount();
   });
 
-  test('', () => {
+  test('Will test something...', () => {
     const EventListWrapper = mount(<EventList events={[{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }]}  />);
     expect(EventListWrapper.find(EventList).props().events).not.toEqual(undefined);
   });

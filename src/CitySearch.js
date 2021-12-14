@@ -18,7 +18,7 @@ class CitySearch extends Component {
 
       updateNumberOfEvents = (num) => {
         this.setState({
-          events: mockData.filter( data  => data.location == this.state.query).slice(0, num)
+          events: mockData.filter( data  => data.location === this.state.query).slice(0, num)
         })
       }
     
@@ -36,7 +36,7 @@ class CitySearch extends Component {
         handleItemClicked = (suggestion) => {
           this.setState({
             query: suggestion,
-            events: mockData.filter( data  => data.location == suggestion)
+            events: mockData.filter( data  => data.location === suggestion)
           });
 
         }
