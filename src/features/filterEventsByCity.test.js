@@ -3,6 +3,9 @@ import React from 'react';
 import { mount } from 'enzyme';
 import App from '../App';
 import { mockData } from '../mock-data';
+import { EventList } from '../EventList';
+import { CitySearch } from '../CitySearch';
+
 const feature = loadFeature('./src/features/filterEventsByCity.feature');
 
 defineFeature(feature, test => {
@@ -16,8 +19,8 @@ defineFeature(feature, test => {
         });
     
         then('the user should see the list of upcoming events.', () => {
-            AppWrapper.update();
-            expect(AppWrapper.find('.event')).toHaveLength(mockData.length);
+            expect(AppWrapper.find('CitySearch')).toHaveLength(1);
+            expect(AppWrapper.find('CitySearch').props().locations).toHaveLength(2);
         });
       });
     
