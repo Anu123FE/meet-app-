@@ -87,4 +87,13 @@ A)	Scenario 1: Show a chart with the number of upcoming events in each city
 •	When: user clicks on the chart
 •	Then: user will be able to see the chart showing upcoming events in each city
 
+Screenshots Included:
+
+Home Screen:
+<img width="1458" alt="Home Screen-Loading List of Events By Default" src="https://user-images.githubusercontent.com/80176993/149637700-6cd44857-90f3-49f7-8b5b-6e6b01369e39.png">
+
+Searching By Parameters Inputted:
 <img width="1561" alt="Loading of results as per the location parameter and the number of events parameters" src="https://user-images.githubusercontent.com/80176993/149637450-a4bca004-b1b4-4030-8f5d-f69200348054.png">
+
+"Show More" and "Hide" Features On Display:
+<img width="1558" alt="Screen Shot 2022-01-15 at 4 07 48 PM" src="https://user-images.githubusercontent.com/80176993/149637778-a2c43658-f75a-48f4-8b72-896cb4e69803.png">
