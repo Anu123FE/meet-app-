@@ -87,5 +87,4 @@ A)	Scenario 1: Show a chart with the number of upcoming events in each city
 •	When: user clicks on the chart
 •	Then: user will be able to see the chart showing upcoming events in each city
 
-![image](https://user-images.githubusercontent.com/80176993/149637357-9f1045a4-0232-466b-a6fc-2e79ff78c152.png)
 <img width="1561" alt="Loading of results as per the location parameter and the number of events parameters" src="https://user-images.githubusercontent.com/80176993/149637450-a4bca004-b1b4-4030-8f5d-f69200348054.png">
