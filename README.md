@@ -5,6 +5,30 @@ This is a serverless, progressive web application (PWA) built with React using a
 
 Website published at:https://anu123fe.github.io/meet-app-/
 
+# AWS Lambda functions
+The details are held within the auth-server folder. This project makes use of three functions with AWS Lambda:
+
+getAuthURL
+getAccessToken
+getCalendarEvents
+getAuthURL (Step 1)
+https://hv2altwv0j.execute-api.us-east-1.amazonaws.com/dev/api/get-auth-url
+getAuthURL generates a Url for oAuth2 authentication with Google which includes a code to be used with the getAccessToken function.
+
+getAccessToken (Step 2)
+https://hv2altwv0j.execute-api.us-east-1.amazonaws.com/dev/api/token/{code}
+getAccessToken is called using the code from getAuthURL in place of "{code}" in the URL. The function returns an access token which may be used to gain access to the Google Calendar API.
+
+getCalendarEvents (Step 3)
+https://hv2altwv0j.execute-api.us-east-1.amazonaws.com/dev/api/get-calendar-events/{accessToken} getCalendarEvents is called using the access token obtained from getAccessToken in place of "{accessToken}". A sucessful response will include JSON data containing a list of event objects from the CareerFoundry events API calendar.
+
+# Testing
+Unit testing and integration testing are performed using Jest which is a JavaScript testing framework. It focuses on simplicity and support for large web applications,which makes it ideal to be used on this app.
+Jest-cucumber is also used here for testing and it runs on top on Jest. This enabled me to write a Jest test for each scenario, and then define Given , When , and Then step definitions inside of my Jest tests.
+
+# Performance Monitoring
+Atatus to peform performance monitoring for the app. Atatus is a full-stack observability tool that helps us identify the performance bottlenecks and helps us optimize our application at the right time.
+
 # User Stories and Requirements
 
 FEATURE 1: FILTER EVENTS BY CITY
