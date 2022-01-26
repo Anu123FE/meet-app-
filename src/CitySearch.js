@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import EventList from './EventList';
 import { mockData } from './mock-data';
 import NumberOfEvents from './NumberOfEvents';
+import { InfoAlert } from './Alert';
 
 class CitySearch extends Component {
     state = {
@@ -24,24 +25,33 @@ class CitySearch extends Component {
     
       handleInputChanged = (event) => {
         const value = event.target.value;
-        if (!this.props.locations) {
-         alert ('no location entered!')
-        }
         const suggestions = this.props.locations.filter((location) => {
             return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
-          });
+        });
+        console.log(suggestions)
+        if (!suggestions || suggestions.length === 0) {
           this.setState({
-            query: value,
-            suggestions,
-           
-          });
+            infoText: 'No data found for that location!'
+          }) 
+         }
+       else {
+        this.setState({
+          infoText: ''
+        }) 
+       }
+        
+       this.setState({
+        query: value,
+        suggestions,
+      });
+
         };
         handleItemClicked = (suggestion) => {
-          this.setState({
-            query: suggestion,
-            events: mockData.filter( data  => data.location === suggestion)
-          });
-
+          const evts = mockData.filter( data  => data.location === suggestion);
+            this.setState({
+              query: suggestion,
+              events: evts 
+            });
         }
   render() {
     return (
@@ -62,6 +72,7 @@ class CitySearch extends Component {
              ))}
             <li key='all'>
               <b>See all cities</b>
+              <InfoAlert text={this.state.infoText} color={"blue"} />
             </li>
            </ul>
            <br/><br/>
