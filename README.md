@@ -121,3 +121,7 @@ Searching By Parameters Inputted:
 
 "Show More" and "Hide" Features On Display:
 <img width="1558" alt="Screen Shot 2022-01-15 at 4 07 48 PM" src="https://user-images.githubusercontent.com/80176993/149637778-a2c43658-f75a-48f4-8b72-896cb4e69803.png">
+
+Alerts On Display:
+<img width="1558" alt="Screen Shot 2022-01-15 at 4 07 48 PM" src="https://user-images.githubusercontent.com/80176993/151891131-d526e0f2-d67a-427a-a02d-fc39144f5155.png">
+<img width="1345" alt="Screen Shot 2022-01-31 at 6 40 29 PM" src="https://user-images.githubusercontent.com/80176993/151891165-912aec02-0ceb-41ea-b0cd-cf55cd0c70d6.png">
