@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { InfoAlert } from './Alert';
+import ErrorAlert from './ErrorAlert';
 
 class NumberOfEvents extends React.Component {
     state = { 
@@ -14,7 +15,7 @@ class NumberOfEvents extends React.Component {
     }
     updateNumOfEvt = (e) => {
         if (e.key === 'Enter') {
-            if (!this.state.numberofevents) {
+            if (!this.state.numberofevents || this.state.numberofevents < 1) {
                 this.setState({
                     infoText: 'please enter a value for number of events!'
                   }) 
@@ -29,7 +30,7 @@ class NumberOfEvents extends React.Component {
     }
     render() { 
         return <div>
-             <InfoAlert text={this.state.infoText} color={"red"} />
+             <ErrorAlert text={this.state.infoText} color={"red"} />
             NumberofEvents <input value ={this.state.numberofevents} type="text" onChange={this.handleInput} onKeyDown={this.updateNumOfEvt}/>
         </div>;
     }

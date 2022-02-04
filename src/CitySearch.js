@@ -14,7 +14,12 @@ class CitySearch extends Component {
       componentDidMount() {
         this.setState({
           events: mockData
-        })
+        });
+        
+        if(!navigator.onLine){
+          
+        }
+        // localStorage.setItem('events', JSON.stringify(mockData))
       }
 
       updateNumberOfEvents = (num) => {
