@@ -1,21 +1,9 @@
-import React, { Component } from 'react';
+import Alert from "./Alert";
 
-export default class ErrorAlert extends Component {
+class ErrorAlert extends Alert{
   constructor(props) {
     super(props);
-  }
-
-  style =  {
-      color:'red',
-    };
-
-  render() {
-    return (
-      <div className="Alert">
-        <p style={this.style}>{this.props.text}</p>
-      </div>
-    );
+    this.color = 'red';
   }
 }
-
-
+export default ErrorAlert;

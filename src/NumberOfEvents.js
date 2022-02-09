@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { InfoAlert } from './Alert';
+import { InfoAlert } from './InfoAlert';
 import ErrorAlert from './ErrorAlert';
 
 class NumberOfEvents extends React.Component {

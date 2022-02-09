@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import EventList from './EventList';
 import { mockData } from './mock-data';
 import NumberOfEvents from './NumberOfEvents';
-import { InfoAlert } from './Alert';
+import { InfoAlert } from './InfoAlert';
 
 class CitySearch extends Component {
     state = {
@@ -17,7 +17,7 @@ class CitySearch extends Component {
         });
         
         if(!navigator.onLine){
-          
+
         }
         // localStorage.setItem('events', JSON.stringify(mockData))
       }
