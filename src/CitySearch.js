@@ -81,7 +81,7 @@ class CitySearch extends Component {
             </li>
            </ul>
            <br/><br/>
-              <NumberOfEvents  updateNumberOfEvents = {this.updateNumberOfEvents} /> <font size="1.5"><i>Type a number and press enter</i></font>
+              <NumberOfEvents queryText={this.state.query}  updateNumberOfEvents = {this.updateNumberOfEvents} /> <font size="1.5"><i>Type a number and press enter</i></font>
            <hr width="100%"></hr>
            <br/>
            <EventList events={this.state.events} />

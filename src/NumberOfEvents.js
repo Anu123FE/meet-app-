@@ -15,6 +15,12 @@ class NumberOfEvents extends React.Component {
     }
     updateNumOfEvt = (e) => {
         if (e.key === 'Enter') {
+            if (!this.props.queryText) {
+                this.setState({
+                    infoText: 'City field is empty. Please enter a city!'
+                  }) ;
+                  return;
+            }
             if (!this.state.numberofevents || this.state.numberofevents < 1) {
                 this.setState({
                     infoText: 'please enter a value for number of events!'
