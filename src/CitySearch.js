@@ -18,6 +18,7 @@ class CitySearch extends Component {
         });
         
         if(!navigator.onLine){
+          console.log("We're offline!")
           this.setState({
             infoText: 'You are offline! Data is being pulled from cache!',
             events: JSON.parse(localStorage.getItem('events'))
