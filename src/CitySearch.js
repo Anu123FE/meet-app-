@@ -9,6 +9,7 @@ class CitySearch extends Component {
         query: '',
         suggestions: [],
         events: [],
+        infoText: '',
       }
 
       componentDidMount() {
@@ -17,9 +18,12 @@ class CitySearch extends Component {
         });
         
         if(!navigator.onLine){
-
+          this.setState({
+            infoText: 'You are offline! Data is being pulled from cache!',
+            events: JSON.parse(localStorage.getItem('events'))
+          })
         }
-      localStorage.setItem('events', JSON.stringify(mockData))
+ 
       }
 
       updateNumberOfEvents = (num) => {
