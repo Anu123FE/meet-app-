@@ -19,7 +19,7 @@ class CitySearch extends Component {
         if(!navigator.onLine){
 
         }
-        // localStorage.setItem('events', JSON.stringify(mockData))
+      localStorage.setItem('events', JSON.stringify(mockData))
       }
 
       updateNumberOfEvents = (num) => {
