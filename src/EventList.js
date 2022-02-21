@@ -13,14 +13,7 @@ const data = [
 ];
 
 console.log(mockData)
-const locations = mockData.map(x=>x.location);
-//  const evts = mockData.filter( data  => data.location === suggestion);
-const dt = locations.map(x=> {
-  const n = mockData.filter(y=>y.location === x).length;
-  return {location: x, event: n}
-});
 
-console.log(dt)
 // const dt = mockData.map(x=> 
 //   [
 //     x.
@@ -29,6 +22,16 @@ console.log(dt)
 class EventList extends Component {
     render() {
         const { events } = this.props;
+
+        const locations =  events.map(x=>x.location);
+//  const evts = mockData.filter( data  => data.location === suggestion);
+const dt = locations.map(x=> {
+  const n = events.filter(y=>y.location === x).length;
+  return {location: x, event: n}
+});
+
+console.log(dt)
+
         return (
           <div>
              <h1>eufduhfuogg</h1>
