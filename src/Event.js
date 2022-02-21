@@ -34,7 +34,7 @@ class Event extends Component {
                 <b>location: </b><br />
                 {e.location}
               </p>
-              <a href="#" onClick={this.showEvent}>{buttonTxt}</a>
+              <button type="button" onClick={this.showEvent}>{buttonTxt}</button>
               <div hidden={show}> 
                 <b>description: </b><br />
                 {e.description}
