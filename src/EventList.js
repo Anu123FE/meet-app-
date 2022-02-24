@@ -1,16 +1,8 @@
 import React, { Component } from 'react';
 import { ResponsiveContainer, ScatterChart, CartesianGrid, XAxis, YAxis, Tooltip, Scatter } from 'recharts';
 import Event from './Event';
+import EventGenre from './EventGenre';
 import { mockData } from './mock-data';
-
-const data = [
-  { x: 100, y: 200, z: 200 },
-  { x: 120, y: 100, z: 260 },
-  { x: 170, y: 300, z: 400 },
-  { x: 140, y: 250, z: 280 },
-  { x: 150, y: 400, z: 500 },
-  { x: 110, y: 280, z: 200 },
-];
 
 console.log(mockData)
 
@@ -33,9 +25,8 @@ const dt = locations.map(x=> {
 console.log(dt)
 
         return (
-          <div>
-             <h1>eufduhfuogg</h1>
-             
+          <div> 
+      
              <ScatterChart
           width={800}
           height={400}
@@ -52,6 +43,8 @@ console.log(dt)
           <Tooltip cursor={{ strokeDasharray: '3 3' }} />
           <Scatter name="A school" data={dt} fill="#8884d8" />
         </ScatterChart>
+
+          <EventGenre dt={dt} />
 
         <ul className="EventList">
             {events.map(event =>
