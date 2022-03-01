@@ -33,10 +33,11 @@ const EventGenre = ({ dt }) => {
     return (
         <ResponsiveContainer height = {600} style = {{marginLeft: '20px'}} >
             <PieChart width={500} height={500}>
+           
             <Pie
             data={newData}
-            cx={200}
-            cy={200}
+            cx={"50%"}
+            cy={"50%"}
             labelLine={false}
             outerRadius={80}
             fill="#8884d8"
