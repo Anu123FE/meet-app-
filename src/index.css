@@ -15,3 +15,23 @@ code {
 li {
   list-style: none;
 }
+
+button {
+  background-color: green;
+  height: 55px;
+  width: 350px;
+  font-size: 25px !important;
+  padding: 5px;
+  color: white;
+}
+
+button:hover {
+  background-color: lightgreen;
+  transition:  0.25s ease-in;
+  color:rgb(18, 18, 18);
+}
+
+/* ul
+{
+  width: '100%'
+} */

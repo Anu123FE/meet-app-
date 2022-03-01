@@ -25,7 +25,7 @@ const dt = locations.map(x=> {
 console.log(dt)
 
         return (
-          <div> 
+          <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', margin: '0px auto', width: '80%'}}> 
       
              <ScatterChart
           width={800}
@@ -46,13 +46,18 @@ console.log(dt)
 
           <EventGenre dt={dt} />
 
-        <ul className="EventList">
+<div style={{width: '100%'}}>
+
+<ul className="EventList" style={{width: '90%', margin: '0 20rem'}}>
             {events.map(event =>
               <li key={event.id}>
                 <Event e = {event} />
               </li>
             )}
           </ul>
+
+</div>
+    
 
           </div>
          

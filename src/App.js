@@ -5,6 +5,7 @@ import { mockData } from './mock-data';
 import { extractLocations } from './api';
 import WelcomeScreen from './WelcomeScreen';
 import { getEvents, checkToken, getAccessToken } from './api';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   state = {
