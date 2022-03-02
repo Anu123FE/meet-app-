@@ -29,6 +29,9 @@ Jest-cucumber is also used here for testing and it runs on top on Jest. This ena
 # Performance Monitoring
 Atatus to peform performance monitoring for the app. Atatus is a full-stack observability tool that helps us identify the performance bottlenecks and helps us optimize our application at the right time.
 
+# Chart Representation For Data Visualization
+I have added a Scatter Chart and a Pie Chart for the visual representation of data. Both the charts are responsive. Upon inputting a particular city name and the no.of events to be displayed, the scatter and the pie charts show only that specific no.of events in that specific city. This enables the user to see and interpret the data more clearly. 
+
 # User Stories and Requirements
 
 FEATURE 1: FILTER EVENTS BY CITY
@@ -128,3 +131,6 @@ Alerts On Display:
 <img width="1345" alt="Screen Shot 2022-01-31 at 6 40 29 PM" src="https://user-images.githubusercontent.com/80176993/151891621-f4ce192e-b5d6-477c-a130-97a0c3dcc1ac.png">
 
 <img width="1240" alt="Screen Shot 2022-01-31 at 6 39 23 PM" src="https://user-images.githubusercontent.com/80176993/151891643-7ca0db6f-fe19-4462-8b82-5d1129d08f85.png">
+
+Added the ScatterChart and The Pie Charts:
+<img width="1950" alt="Screen Shot 2022-03-01 at 7 46 14 PM" src="https://user-images.githubusercontent.com/80176993/156273405-94a4de42-9129-457b-b532-b2d341fa1790.png">
